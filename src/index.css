@@ -1,0 +1,135 @@
+/* ==== COLORS VARIABLES ==== */
+:root {
+  --primaryColor: #61dae7;
+  --darkColor: #20232a;
+  --light-darkColor: #282c34;
+  --redColor: #d33232;
+  --whiteColor: #fff;
+  --greenColor: #3bb54a;
+  --grayColor: #fafafc;
+  --grayColor-alt: #cccccc;
+}
+
+/* ==== SIZES VARIABLES ==== */
+:root {
+  /* fonts */
+  --small-font: 16px;
+  --normal-font: 20px;
+  --medium-font: 30px;
+  --large-font: 50px;
+
+  /* margin */
+  --margin-10: 10px;
+  --margin-20: 20px;
+  --margin-30: 30px;
+  --margin-40: 40px;
+
+  /* padding */
+  --padding-10: 10px;
+  --padding-20: 20px;
+  --padding-30: 30px;
+  --padding-40: 40px;
+
+  /* other */
+  --transition: 0.3s ease-in-out;
+  --header-top-hieght: 100px;
+  --header-bottom-hieght: 60px;
+}
+
+@media (max-width: 992px) {
+  :root {
+    /* fonts */
+    --small-font: 14px;
+    --normal-font: 18px;
+    --medium-font: 25px;
+    --large-font: 30px;
+
+    /* other */
+    --header-top-hieght: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-top-hieght: 140px;
+  }
+}
+
+/* ==== GENERAL SETTINGS ==== */
+* {
+  font-family: "Tajawal", sans-serif;
+  font-size: var(--normal-font);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  background-color: var(--grayColor);
+  padding-top: calc(
+    var(--header-top-hieght) + var(--header-bottom-hieght) + 10px
+  );
+  color: var(--darkColor);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* ==== GENERAL CLASSES AND ELEMENTS ==== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.section-title {
+  font-size: calc(var(--medium-font) + 10px);
+  text-align: center;
+  margin: 0 auto var(--margin-30);
+  color: var(--light-darkColor);
+  position: relative;
+  width: fit-content;
+  background-color: var(--primaryColor);
+  padding: 7px 10px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--primaryColor);
+}

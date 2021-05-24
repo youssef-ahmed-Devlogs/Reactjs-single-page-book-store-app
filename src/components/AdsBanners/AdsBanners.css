@@ -1,0 +1,17 @@
+.AdsBanners {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.AdsBanners img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .AdsBanners {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

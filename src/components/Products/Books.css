@@ -1,0 +1,134 @@
+.books-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.book {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding-bottom: 20px;
+  background-color: var(--whiteColor);
+}
+
+.books-content .book-img {
+  position: relative;
+  display: block;
+}
+
+.books-content .book-img img {
+  display: block;
+  height: 400px;
+  width: fit-content;
+}
+
+.books-content .book-img .book-discount {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--whiteColor);
+  background-color: var(--greenColor);
+  padding: 5px;
+  font-size: var(--small-font);
+}
+
+.books-content .book-img .book-desc {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.books-content .book-img:hover .book-desc {
+  opacity: 1;
+}
+
+.books-content .book-img .book-desc .details {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  border-radius: 0.5rem;
+  padding: 10px 20px;
+}
+
+.books-content .book-title {
+  margin-top: var(--margin-20);
+  margin-bottom: var(--margin-10);
+  font-size: var(--medium-font);
+  color: var(--darkColor);
+}
+
+.books-content .book-old-price {
+  display: block;
+  text-decoration: line-through;
+  color: var(--primaryColor);
+}
+
+.books-content .book-price {
+  color: var(--darkColor);
+  display: block;
+  font-size: calc(var(--normal-font) + 6px);
+}
+
+.books-content .add-to-cart-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.books-content .book:hover .add-to-cart-btn {
+  bottom: 0;
+}
+
+.books-content .add-to-cart-btn button,
+.books-content .add-to-cart-btn .icon-heart {
+  background-color: var(--darkColor);
+  color: var(--whiteColor);
+  padding: 10px 15px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: var(--normal-font);
+  transition: var(--transition);
+  height: 50px;
+}
+
+.books-content .add-to-cart-btn .icon-heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--margin-10);
+}
+
+.books-content .add-to-cart-btn span {
+  width: 60px !important;
+  display: block;
+}
+
+.books-content .add-to-cart-btn span {
+  display: block;
+  height: 60px;
+}
+
+.books-content .add-to-cart-btn button:hover {
+  opacity: 0.7;
+}

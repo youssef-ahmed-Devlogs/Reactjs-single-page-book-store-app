@@ -1,0 +1,95 @@
+.DetailsPage-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.DetailsPage-img {
+  width: 20%;
+}
+
+.DetailsPage-info {
+  width: calc(80% - 20px);
+}
+
+@media (max-width: 992px) {
+  .DetailsPage-img {
+    width: 30%;
+  }
+
+  .DetailsPage-info {
+    width: calc(70% - 20px);
+  }
+}
+
+.DetailsPage-info .title {
+  font-size: calc(var(--large-font) - 10px);
+}
+
+.DetailsPage-info .author {
+  margin-bottom: var(--margin-10);
+  color: var(--light-darkColor);
+}
+
+.DetailsPage-info .book-information {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: var(--margin-20);
+}
+
+.DetailsPage-info .price {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: var(--medium-font);
+  margin-bottom: var(--margin-10);
+}
+
+.DetailsPage-info .price .before-discount {
+  text-decoration: line-through;
+  font-weight: 400;
+  color: var(--light-darkColor);
+}
+
+.DetailsPage-info .add-to-cart {
+  background-color: var(--greenColor);
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  color: var(--whiteColor);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.DetailsPage-info .add-to-cart:hover {
+  opacity: 0.8;
+}
+
+.DetailsPage .description {
+  background-color: var(--whiteColor);
+  border: 1px solid var(--grayColor-alt);
+  padding: 10px;
+  font-size: var(--small-font);
+  line-height: 1.5;
+  margin-top: var(--margin-30);
+}
+
+@media (max-width: 768px) {
+  .DetailsPage-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .DetailsPage-img,
+  .DetailsPage-info {
+    text-align: center;
+  }
+
+  .DetailsPage-info {
+    margin-top: var(--margin-10);
+    width: 100%;
+  }
+
+  .DetailsPage-img {
+    width: 80%;
+  }
+}
