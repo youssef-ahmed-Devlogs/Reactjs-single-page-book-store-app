@@ -1,6 +1,6 @@
 .books-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 
@@ -69,6 +69,8 @@
   margin-bottom: var(--margin-10);
   font-size: var(--medium-font);
   color: var(--darkColor);
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .books-content .book-old-price {

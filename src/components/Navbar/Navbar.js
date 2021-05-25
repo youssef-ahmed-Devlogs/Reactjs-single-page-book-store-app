@@ -4,7 +4,7 @@ import FeatherIcon from "feather-icons-react";
 import "./Navbar.css";
 import { ProductsContext } from "../../context/ProductsContext";
 
-function Navbar() {
+function Navbar(props) {
   const [open, setOpen] = useState(false);
 
   const [darkTheme, setDarkTheme] = useState(false);
@@ -13,7 +13,8 @@ function Navbar() {
 
   const closeNavMenu = () => setOpen(false);
 
-  const { cart, favorites } = useContext(ProductsContext);
+  const { cart, favorites, searchTerm, setSearchTerm } =
+    useContext(ProductsContext);
 
   // item in fav count
   const favCount = () => {
@@ -30,6 +31,10 @@ function Navbar() {
     if (darkTheme) {
       document.documentElement.style.setProperty("--darkColor", "#fff");
       document.documentElement.style.setProperty(
+        "--dark-opacity-8",
+        "rgba(255, 255, 255, .8)"
+      );
+      document.documentElement.style.setProperty(
         "--light-darkColor",
         "#fafafc"
       );
@@ -37,6 +42,10 @@ function Navbar() {
       document.documentElement.style.setProperty("--grayColor", "#282c34");
     } else {
       document.documentElement.style.setProperty("--darkColor", "#20232a");
+      document.documentElement.style.setProperty(
+        "--dark-opacity-8",
+        "rgba(0, 0, 0, 0.8)"
+      );
       document.documentElement.style.setProperty(
         "--light-darkColor",
         "#282c34"
@@ -59,6 +68,16 @@ function Navbar() {
     localStorage.setItem("darkTheme", darkTheme);
   }, [darkTheme]);
 
+  useEffect(() => {
+    if (searchTerm.trim() !== "") {
+      props.history.push("/search");
+    }
+  }, [searchTerm]);
+
+  const onChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <nav>
       {/* Navbar top */}
@@ -71,13 +90,13 @@ function Navbar() {
               </span>
               <span className="logo-title">كــتـــابــى</span>
             </Link>
-            <form>
-              <input type="text" placeholder="ابحث عن كتابك..." />
-              <button type="submit">
-                <span className="icon-search">
-                  <FeatherIcon icon="search" />
-                </span>
-              </button>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="text"
+                value={searchTerm}
+                placeholder="ابحث عن كتابك..."
+                onChange={onChange}
+              />
             </form>
           </div>
         </div>

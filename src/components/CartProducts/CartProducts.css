@@ -111,6 +111,10 @@
   .cartProduct .cartProduct-price-info {
     width: 100%;
   }
+
+  .cartProduct-name-info h3 {
+    font-size: calc(var(--normal-font) + 4px);
+  }
 }
 
 @media (max-width: 992px) {

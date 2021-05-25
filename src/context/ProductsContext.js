@@ -179,11 +179,29 @@ export const ProductsProvider = (props) => {
       year: 2009,
       lang: "en",
     },
+    {
+      id: 7,
+      title: "JavaScript The Definitive Guide",
+      description: `
+      Offers comprehensive coverage of ECMAScript 5 and also the APIs introduced in HTML5. This book features the chapters on functions and classes. It includes a chapter that covers language extensions and subsets.
+      `,
+      author: "Flanagan, David",
+      image: "/images/products/img7.jpg",
+      price: 81.04,
+      discount: 0,
+      amount: 1,
+      inCart: false,
+      inFav: false,
+      pages: 1100,
+      year: 2011,
+      lang: "en",
+    },
   ];
 
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // set Products after page reload
   useEffect(() => {
@@ -268,6 +286,8 @@ export const ProductsProvider = (props) => {
         setCart,
         favorites,
         addToFavorites,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {props.children}

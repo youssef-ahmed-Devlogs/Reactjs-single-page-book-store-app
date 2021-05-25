@@ -1,0 +1,8 @@
+.search-result-head {
+  margin-bottom: var(--margin-40);
+  font-size: var(--medium-font);
+}
+
+.no-search {
+  text-align: center;
+}
